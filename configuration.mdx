@@ -1,0 +1,159 @@
+---
+title: Configuration Options
+description: Customize your EM Documentation space with settings for branding, permissions, and integrations.
+---
+
+## Overview
+
+Configure your EM Documentation space to match your brand and control access. Access these settings from the admin dashboard at `/admin/settings`. You customize branding with colors and logos, manage user permissions for collaboration, and handle export or import for backups and migrations.
+
+<Columns cols={3}>
+  <Card title="Branding" icon="palette" href="/docs/configuration/branding">
+    Set colors, logos, and themes to reflect your identity.
+  </Card>
+  <Card title="Permissions" icon="shield" href="/docs/configuration/permissions">
+    Define roles and access levels for team members.
+  </Card>
+  <Card title="Export/Import" icon="upload" href="/docs/configuration/export">
+    Backup or migrate your documentation content.
+  </Card>
+</Columns>
+
+## Branding Customization
+
+Update your space's appearance using the branding panel. Start by setting the primary color to `#3B82F6` for consistency.
+
+<Steps>
+  <Step title="Access Branding Settings" icon="settings">
+    Navigate to **Admin > Branding** in the dashboard.
+  </Step>
+  <Step title="Set Primary Color">
+    Enter your hex code, such as `#3B82F6`.
+
+    ```json
+    {
+      "primaryColor": "#3B82F6",
+      "secondaryColor": "#1E40AF"
+    }
+    ```
+  </Step>
+  <Step title="Upload Logo" icon="upload">
+    Drag and drop your logo file (PNG or SVG, `<256KB`).
+
+    <Callout kind="tip">
+      Use a transparent background for best results on dark and light modes.
+    </Callout>
+  </Step>
+  <Step title="Save Changes">
+    Click **Apply** to preview and publish updates instantly.
+  </Step>
+</Steps>
+
+<CodeGroup tabs="JSON,YAML">
+  ```json
+  {
+    "brand": {
+      "logoUrl": "https://your-domain.com/logo.png",
+      "faviconUrl": "https://your-domain.com/favicon.ico",
+      "primaryColor": "#3B82F6"
+    }
+  }
+  ```
+  ```yaml
+  brand:
+    logoUrl: https://your-domain.com/logo.png
+    faviconUrl: https://your-domain.com/favicon.ico
+    primaryColor: "#3B82F6"
+  ```
+</CodeGroup>
+
+## User Permissions
+
+Control who views, edits, or administers your documentation. Assign roles via the **Users** tab.
+
+<Tabs>
+  <Tab title="Viewer" icon="eye">
+    Read-only access.
+
+    | Permission       | Allowed |
+    |------------------|---------|
+    | View pages       | ✅     |
+    | Edit content     | ❌     |
+    | Manage users     | ❌     |
+  </Tab>
+  <Tab title="Editor" icon="edit-3">
+    Content management.
+
+    | Permission       | Allowed |
+    |------------------|---------|
+    | View pages       | ✅     |
+    | Edit content     | ✅     |
+    | Manage users     | ❌     |
+  </Tab>
+  <Tab title="Admin" icon="shield">
+    Full control.
+
+    | Permission       | Allowed |
+    |------------------|---------|
+    | View pages       | ✅     |
+    | Edit content     | ✅     |
+    | Manage users     | ✅     |
+  </Tab>
+</Tabs>
+
+<Callout kind="alert">
+  Changes apply immediately. Revoke admin access carefully to avoid lockouts.
+</Callout>
+
+## Export and Import Options
+
+Backup your content or migrate to another space.
+
+### Export Workflow
+
+<Steps>
+  <Step title="Select Format">
+    Choose Markdown, PDF, or HTML from the **Export** menu.
+  </Step>
+  <Step title="Configure Scope">
+    Pick all pages or specific sections.
+  </Step>
+  <Step title="Download">
+    Generate and download the archive.
+  </Step>
+</Steps>
+
+### Import Content
+
+Use the import tool for bulk uploads.
+
+<ExpandableGroup>
+  <Expandable title="Markdown Import" default-open="true">
+    Supports standard MDX files.
+
+    ```bash
+    zip -r docs.zip pages/ config.mdx
+    # Upload via Admin > Import > Markdown
+    ```
+  </Expandable>
+  <Expandable title="Advanced JSON Import">
+    For structured data migration.
+
+    ```json
+    {
+      "pages": [
+        {
+          "path": "/docs/intro",
+          "content": "# Introduction\nWelcome to EM."
+        }
+      ]
+    }
+    ```
+  </Expandable>
+</ExpandableGroup>
+
+<Callout kind="success">
+  Test imports on a staging space first to verify formatting.
+</Callout>
+
+These options ensure your documentation stays branded, secure, and portable. Review changes in preview mode before publishing.

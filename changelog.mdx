@@ -1,0 +1,125 @@
+---
+title: Changelog
+description: Stay updated with the latest releases, features, and improvements in EM Documentation.
+---
+
+## Recent Releases
+
+EM Documentation evolves rapidly to bring you better tools for managing project docs. Check this changelog regularly to see new features, improvements, and fixes. You receive notifications for major releases via your dashboard.
+
+<Callout kind="info">
+Subscribe to updates in your account settings to get email alerts for new versions.
+</Callout>
+
+<Update label="2024-10-15" description="v1.5.0" tags={["feature", "improvement"]}>
+## New Features
+
+- Added real-time collaboration editing for documentation pages
+- Introduced version pinning for stable doc deployments
+
+## Improvements
+
+- Enhanced search with fuzzy matching and syntax highlighting
+- Optimized page load times by `>40%` for large doc sites
+
+## Bug Fixes
+
+- Fixed markdown parsing issues with nested lists
+- Resolved export failures for pages with embedded images
+</Update>
+
+<Update label="2024-09-28" description="v1.4.2" tags={["bugfix", "security"]}>
+## Bug Fixes
+
+- Patched potential XSS vulnerability in custom component rendering
+- Corrected API rate limiting that blocked legitimate requests
+
+## Improvements
+
+- Streamlined sidebar navigation for nested documentation structures
+</Update>
+
+<Update label="2024-09-10" description="v1.4.0" tags={["feature", "breaking"]}>
+## New Features
+
+- Launched custom themes with brand color support (e.g., `#3B82F6`)
+- Integrated analytics dashboard for doc usage tracking
+
+## Breaking Changes
+
+- Updated authentication flow—migrate to new `{API_KEY}` format
+
+## Bug Fixes
+
+- Fixed table rendering in dark mode
+</Update>
+
+## Upgrade Guide
+
+Follow these steps to update your EM Documentation instance.
+
+<Steps>
+  <Step title="Check Current Version" icon="package">
+    Run this command in your project root to verify your version:
+
+    <CodeGroup tabs="npm,yarn">
+    ```bash
+    npm list em-docs
+    ```
+    ```bash
+    yarn list em-docs
+    ```
+    </CodeGroup>
+  </Step>
+
+  <Step title="Install Latest" icon="download">
+    Update to the newest release:
+
+    <Tabs>
+      <Tab title="npm" icon="package">
+      ```bash
+      npm install em-docs@latest
+      ```
+      </Tab>
+      <Tab title="yarn" icon="package">
+      ```bash
+      yarn add em-docs@latest
+      ```
+      </Tab>
+    </Tabs>
+  </Step>
+
+  <Step title="Deploy Changes" icon="rocket">
+    Rebuild and redeploy your docs site. Test key pages for compatibility.
+  </Step>
+</Steps>
+
+## Quick Links
+
+<Columns cols={3}>
+  <Card title="Quickstart" icon="book-open" href="/docs/quickstart">
+    Get started in minutes with EM Documentation.
+  </Card>
+  <Card title="API Reference" icon="code" href="/docs/api">
+    Full API details and endpoints.
+  </Card>
+  <Card title="Customization" icon="settings" href="/docs/customize">
+    Tailor docs to your brand.
+  </Card>
+</Columns>
+
+<ExpandableGroup>
+  <Expandable title="Full Version History" default-open="false">
+    View all past releases:
+
+    | Version | Date       | Key Changes                  |
+    |---------|------------|------------------------------|
+    | v1.3.0  | 2024-08-20 | Initial search improvements |
+    | v1.2.0  | 2024-08-05 | Collaboration beta           |
+    | v1.0.0  | 2024-07-15 | Official launch              |
+  </Expandable>
+</ExpandableGroup>
+
+<Callout kind="tip">
+Contribute changes via GitHub. Fork the repo, submit PRs, and follow our style guide.
+</Callout>

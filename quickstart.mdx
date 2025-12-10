@@ -1,0 +1,115 @@
+---
+title: Quick Start Guide
+description: Get up and running with EM Documentation in minutes, from setup to creating your first document.
+---
+
+## Overview
+
+You can launch your EM Documentation site in under 5 minutes. Follow these steps to create an account, set up your documentation space, and publish your first page. EM Documentation handles hosting, versioning, and search out of the box.
+
+<Callout kind="tip">
+  Use your brand color `#3B82F6` in custom themes for a personalized look.
+</Callout>
+
+## Create Your Account
+
+Sign up quickly to access your documentation dashboard.
+
+<Steps>
+  <Step title="Visit EM Documentation" icon="globe">
+    Navigate to the [EM Documentation signup page](https://em-docs.com/signup).
+  </Step>
+  <Step title="Enter Details" icon="user">
+    Provide your email, choose a username, and set a strong password.
+  </Step>
+  <Step title="Verify Email" icon="mail">
+    Check your inbox and click the verification link.
+  </Step>
+</Steps>
+
+## Set Up Your Documentation Space
+
+Create a new space to organize your project docs.
+
+<Steps>
+  <Step title="New Space" icon="plus">
+    From the dashboard, click **New Space** and name it (e.g., `my-project-docs`).
+  </Step>
+  <Step title="Configure Settings" icon="settings">
+    Set your space slug (e.g., `myproject.em-docs.com`), brand color `#3B82F6`, and enable features like search.
+  </Step>
+  <Step title="Publish Space" icon="rocket">
+    Save and publish. Your site goes live instantly at the custom URL.
+  </Step>
+</Steps>
+
+## Add Your First Document
+
+Write and publish content using Markdown or MDX.
+
+<Tabs>
+  <Tab title="Markdown" icon="file-text">
+    Create `quickstart.md`:
+
+    ```markdown
+    # Quickstart
+
+    Welcome to your docs!
+
+    - Install dependencies
+    - Run the build
+    - Deploy
+    ```
+  </Tab>
+  <Tab title="MDX" icon="code">
+    Create `quickstart.mdx` with components:
+
+    ```mdx
+    ---
+
+    title: Quickstart
+
+    ---
+
+    ## Hello World
+
+    <Callout kind="success">Your first MDX page!</Callout>
+    ```
+  </Tab>
+</Tabs>
+
+Upload via the editor or Git. Preview changes live before publishing.
+
+<CodeGroup tabs="CLI,Web Editor">
+  ```bash
+  em-docs upload quickstart.mdx --space my-project-docs
+  ```
+  ```bash
+  # Use the web interface
+  Drag and drop your file
+  ```
+</CodeGroup>
+
+## Next Steps
+
+Explore these features to enhance your docs.
+
+<Columns cols={3}>
+  <Card title="API Reference" icon="api" href="/docs/api">
+    Document your endpoints with `ParamField` and `Response` components.
+  </Card>
+  <Card title="Changelogs" icon="git-branch" href="/docs/changelog">
+    Track releases using `<Update>` components.
+  </Card>
+  <Card title="Custom Themes" icon="palette" href="/docs/themes">
+    Style with your brand color `#3B82F6`.
+  </Card>
+</Columns>
+
+<Expandable title="Troubleshooting Common Issues" default-open="false">
+  - **Space not publishing?** Check your custom domain DNS.
+  - **Components not rendering?** Ensure proper escaping of `{` and `}` with backticks.
+  - Contact support at support@em-docs.com for help.
+</Expandable>
+
+Your documentation space is now live. Customize further with diagrams, videos, and integrations.
